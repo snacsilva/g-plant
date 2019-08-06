@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lote.name %>
+</p>
+
+<p>
+  <strong>Latitude 1:</strong>
+  <%= @lote.latitude_1 %>
+</p>
+
+<p>
+  <strong>Latitude 2:</strong>
+  <%= @lote.latitude_2 %>
+</p>
+
+<p>
+  <strong>Longitude 1:</strong>
+  <%= @lote.longitude_1 %>
+</p>
+
+<p>
+  <strong>Longitude 2:</strong>
+  <%= @lote.longitude_2 %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @lote.image_name %>
+</p>
+
+<p>
+  <strong>Image type:</strong>
+  <%= @lote.image_type %>
+</p>
+
+<p>
+  <strong>Tile url x:</strong>
+  <%= @lote.tile_url_x %>
+</p>
+
+<p>
+  <strong>Tile url y:</strong>
+  <%= @lote.tile_url_y %>
+</p>
+
+<p>
+  <strong>Tile url z:</strong>
+  <%= @lote.tile_url_z %>
+</p>
+
+<%= link_to 'Edit', edit_lote_path(@lote) %> |
+<%= link_to 'Back', lotes_path %>

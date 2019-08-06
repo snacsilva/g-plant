@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Corretors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cpf</th>
+      <th>Crea</th>
+      <th>Telefone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @corretors.each do |corretor| %>
+      <tr>
+        <td><%= corretor.nome %></td>
+        <td><%= corretor.cpf %></td>
+        <td><%= corretor.crea %></td>
+        <td><%= corretor.telefone %></td>
+        <td><%= link_to 'Show', corretor %></td>
+        <td><%= link_to 'Edit', edit_corretor_path(corretor) %></td>
+        <td><%= link_to 'Destroy', corretor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Corretor', new_corretor_path %>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lotes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Latitude 1</th>
+      <th>Latitude 2</th>
+      <th>Longitude 1</th>
+      <th>Longitude 2</th>
+      <th>Image name</th>
+      <th>Image type</th>
+      <th>Tile url x</th>
+      <th>Tile url y</th>
+      <th>Tile url z</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lotes.each do |lote| %>
+      <tr>
+        <td><%= lote.name %></td>
+        <td><%= lote.latitude_1 %></td>
+        <td><%= lote.latitude_2 %></td>
+        <td><%= lote.longitude_1 %></td>
+        <td><%= lote.longitude_2 %></td>
+        <td><%= lote.image_name %></td>
+        <td><%= lote.image_type %></td>
+        <td><%= lote.tile_url_x %></td>
+        <td><%= lote.tile_url_y %></td>
+        <td><%= lote.tile_url_z %></td>
+        <td><%= link_to 'Show', lote %></td>
+        <td><%= link_to 'Edit', edit_lote_path(lote) %></td>
+        <td><%= link_to 'Destroy', lote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lote', new_lote_path %>
