@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root to: "lotes#index"
   resources :corretores
   resources :empresas
   resources :clientes

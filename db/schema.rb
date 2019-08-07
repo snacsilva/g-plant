@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_05_202141) do
+ActiveRecord::Schema.define(version: 2019_08_06_163820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clientes", force: :cascade do |t|
+    t.string "nome"
+    t.string "cpf"
+    t.string "telefone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "corretores", force: :cascade do |t|
+    t.string "nome"
+    t.string "cpf"
+    t.string "crea"
+    t.string "telefone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "empresas", force: :cascade do |t|
+    t.string "nome"
+    t.string "cnpj"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lotes", force: :cascade do |t|
+    t.string "name"
+    t.string "latitude_1"
+    t.string "latitude_2"
+    t.string "longitude_1"
+    t.string "longitude_2"
+    t.string "image_name"
+    t.string "image_type"
+    t.string "tile_url_x"
+    t.string "tile_url_y"
+    t.string "tile_url_z"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

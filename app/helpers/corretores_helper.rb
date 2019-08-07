@@ -1,2 +1,2 @@
-module CorretorsHelper
+module CorretoresHelper
 end
