@@ -2,27 +2,27 @@
 
 <h1>Lotes</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Latitude 1</th>
-      <th>Latitude 2</th>
-      <th>Longitude 1</th>
-      <th>Longitude 2</th>
-      <th>Image name</th>
-      <th>Image type</th>
-      <th>Tile url x</th>
-      <th>Tile url y</th>
-      <th>Tile url z</th>
-      <th colspan="3"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Latitude 1</th>
+      <th scope="col">Latitude 2</th>
+      <th scope="col">Longitude 1</th>
+      <th scope="col">Longitude 2</th>
+      <th scope="col">Image name</th>
+      <th scope="col">Image type</th>
+      <th scope="col">Tile url x</th>
+      <th scope="col">Tile url y</th>
+      <th scope="col">Tile url z</th>
+      <th scope="col" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @lotes.each do |lote| %>
       <tr>
-        <td><%= lote.name %></td>
+        <td ><%= lote.name %></td>
         <td><%= lote.latitude_1 %></td>
         <td><%= lote.latitude_2 %></td>
         <td><%= lote.longitude_1 %></td>

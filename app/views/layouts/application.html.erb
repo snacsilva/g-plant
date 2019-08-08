@@ -17,42 +17,42 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">    
-      <img src="<%=asset_path('g-plant.png')%>" width="40" height="40" class="d-inline-block align-top" alt="">
+   <nav class="navbar navbar-expand-lg ">
+    <a class="navbar-brand" href="/">    
+      <img src="<%=asset_path('g-plant.png')%>" width="50" height="55" class="d-inline-block align-top" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/lotes">Lotes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/empresas">Empresa</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/clientes">Cliente</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/corretores">Corretor</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
+    <% if user_signed_in? %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lotes">Lotes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/empresas">Empresa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/clientes">Cliente</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/corretores">Corretor</a>
+          </li>
+        </ul>
+        <div class="nav navbar-nav navbar-right">
+          <li>  Logged in as <strong><%= current_user.email %></strong>.
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
+    <% else %>
           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-        <% end %>
-      </span>
+    <% end %>
+      </div>
     </div>
   </nav>
 
