@@ -32,9 +32,9 @@
         <td><%= lote.tile_url_x %></td>
         <td><%= lote.tile_url_y %></td>
         <td><%= lote.tile_url_z %></td>
-        <td><%= link_to 'Show', lote %></td>
-        <td><%= link_to 'Edit', edit_lote_path(lote) %></td>
-        <td><%= link_to 'Destroy', lote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', lote %></td>
+        <td><%= link_to 'Editar', edit_lote_path(lote) %></td>
+        <td><%= link_to 'Destruir', lote, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Lote', new_lote_path, class: "btn btn-primary mb-2" %>
+<%= link_to 'Novo Lote', new_lote_path, class: "btn btn-primary mb-2" %>

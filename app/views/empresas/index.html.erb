@@ -16,9 +16,9 @@
       <tr>
         <td><%= empresa.nome %></td>
         <td><%= empresa.cnpj %></td>
-        <td><%= link_to 'Show', empresa %></td>
-        <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
-        <td><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', empresa %></td>
+        <td><%= link_to 'Editar', edit_empresa_path(empresa) %></td>
+        <td><%= link_to 'Destruir', empresa, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Empresa', new_empresa_path %>
+<%= link_to 'Nova Empresa', new_empresa_path, class: "btn btn-primary mb-2" %>
