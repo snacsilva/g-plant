@@ -28,9 +28,9 @@
     <% if user_signed_in? %>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <%# <li class="nav-item active">
             <a class="nav-link" href="#">Home</a>
-          </li>
+          </li> %>
           <li class="nav-item">
             <a class="nav-link" href="/lotes">Lotes</a>
           </li>
@@ -52,14 +52,13 @@
           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-      <p class="navbar-text pull-right">
-      </p>
-
+    <div class="container">
       <%= yield %>
+    </div>
     </div>
   </body>
 </html>

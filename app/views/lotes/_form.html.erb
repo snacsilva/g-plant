@@ -2,7 +2,6 @@
   <% if lote.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(lote.errors.count, "error") %> prohibited this lote from being saved:</h2>
-
       <ul>
       <% lote.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,58 +9,59 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<form class="form-group row">
+  <div class="field ">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name,
+    class: "form-control"%>
   </div>
-
   <div class="field">
     <%= form.label :latitude_1 %>
-    <%= form.text_field :latitude_1 %>
+    <%= form.text_field :latitude_1,
+    class: "form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :latitude_2 %>
-    <%= form.text_field :latitude_2 %>
+    <%= form.text_field :latitude_2,
+    class: "form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :longitude_1 %>
-    <%= form.text_field :longitude_1 %>
+    <%= form.text_field :longitude_1,
+    class: "form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :longitude_2 %>
-    <%= form.text_field :longitude_2 %>
+    <%= form.text_field :longitude_2,
+    class: "form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :image_name %>
-    <%= form.text_field :image_name %>
+    <%= form.text_field :image_name,
+    class: "form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :image_type %>
-    <%= form.text_field :image_type %>
+    <%= form.text_field :image_type,
+    class: "form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :tile_url_x %>
-    <%= form.text_field :tile_url_x %>
+    <%= form.text_field :tile_url_x,
+    class: "form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :tile_url_y %>
-    <%= form.text_field :tile_url_y %>
+    <%= form.text_field :tile_url_y,
+    class: "form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :tile_url_z %>
-    <%= form.text_field :tile_url_z %>
+    <%= form.text_field :tile_url_z,
+    class: "form-control" %>
   </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <button type="submit" name=”commit” class="btn btn-primary mb-2">Criar</button>
   </div>
+</form>
 <% end %>
