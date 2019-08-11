@@ -1,4 +1,5 @@
 class CorretoresController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_corretor, only: [:show, :edit, :update, :destroy]
 
   def index
