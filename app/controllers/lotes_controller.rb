@@ -1,28 +1,20 @@
 class LotesController < ApplicationController
   before_action :set_lote, only: [:show, :edit, :update, :destroy]
 
-  # GET /lotes
-  # GET /lotes.json
   def index
     @lotes = Lote.all
   end
 
-  # GET /lotes/1
-  # GET /lotes/1.json
   def show
   end
 
-  # GET /lotes/new
   def new
     @lote = Lote.new
   end
 
-  # GET /lotes/1/edit
   def edit
   end
 
-  # POST /lotes
-  # POST /lotes.json
   def create
     @lote = Lote.new(lote_params)
 
@@ -37,8 +29,6 @@ class LotesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lotes/1
-  # PATCH/PUT /lotes/1.json
   def update
     respond_to do |format|
       if @lote.update(lote_params)
@@ -51,8 +41,6 @@ class LotesController < ApplicationController
     end
   end
 
-  # DELETE /lotes/1
-  # DELETE /lotes/1.json
   def destroy
     @lote.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class LotesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_lote
       @lote = Lote.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def lote_params
       params.require(:lote).permit(:name, :latitude_1, :latitude_2, :longitude_1, :longitude_2, :image_name, :image_type, :tile_url_x, :tile_url_y, :tile_url_z)
     end

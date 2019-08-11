@@ -1,28 +1,20 @@
 class CorretoresController < ApplicationController
   before_action :set_corretor, only: [:show, :edit, :update, :destroy]
 
-  # GET /corretores
-  # GET /corretores.json
   def index
     @corretores = Corretor.all
   end
 
-  # GET /corretores/1
-  # GET /corretores/1.json
   def show
   end
 
-  # GET /corretores/new
   def new
     @corretor = Corretor.new
   end
 
-  # GET /corretores/1/edit
   def edit
   end
 
-  # POST /corretores
-  # POST /corretores.json
   def create
     @corretor = Corretor.new(corretor_params)
 
@@ -37,8 +29,6 @@ class CorretoresController < ApplicationController
     end
   end
 
-  # PATCH/PUT /corretores/1
-  # PATCH/PUT /corretores/1.json
   def update
     respond_to do |format|
       if @corretor.update(corretor_params)
@@ -51,8 +41,6 @@ class CorretoresController < ApplicationController
     end
   end
 
-  # DELETE /corretores/1
-  # DELETE /corretores/1.json
   def destroy
     @corretor.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class CorretoresController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_corretor
       @corretor = Corretor.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def corretor_params
       params.require(:corretor).permit(:nome, :cpf, :crea, :telefone)
     end
