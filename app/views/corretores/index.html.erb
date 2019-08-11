@@ -20,9 +20,9 @@
         <td><%= corretor.cpf %></td>
         <td><%= corretor.crea %></td>
         <td><%= corretor.telefone %></td>
-        <td><%= link_to 'Show', corretor %></td>
-        <td><%= link_to 'Edit', edit_corretor_path(corretor) %></td>
-        <td><%= link_to 'Destroy', corretor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', corretor %></td>
+        <td><%= link_to 'Editar', edit_corretor_path(corretor) %></td>
+        <td><%= link_to 'Destruir', corretor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Corretor', new_corretor_path %>
+<%= link_to 'Novo Corretor', new_corretor_path, class: "btn btn-primary mb-2" %>
