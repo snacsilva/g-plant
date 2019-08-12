@@ -43,8 +43,6 @@ gem 'carrierwave'
 gem 'carrierwave-base64'
 gem 'mini_magick'
 gem "fog-aws"
-# gem "fog"
-
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
