@@ -41,10 +41,15 @@ gem 'devise-jwt', '~> 0.5.9'
 
 gem 'carrierwave'
 gem 'carrierwave-base64'
-gem 'mini_magick', '~> 4.3'
+gem 'mini_magick'
+gem "fog-aws"
+# gem "fog"
+
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -49,7 +49,7 @@ class LoteUploader < CarrierWave::Uploader::Base
  
   # Thumb
   version :thumb do
-    process resize_to_fit: [50, 50]
+    process resize_to_fit: [100, 100]
   end
 
   # Medium

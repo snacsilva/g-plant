@@ -52,7 +52,7 @@
 
 <p>
   <strong>Imagem: </strong>
-  <%= image_tag(@lote.imagem.url) %>
+  <%= image_tag(@lote.imagem.thumb.url) %>
 </p>
 
 <%= link_to 'Editar', edit_lote_path(@lote), class: "btn btn-primary mb-2" %> |
