@@ -41,7 +41,7 @@ gem 'devise-jwt', '~> 0.5.9'
 
 gem 'carrierwave'
 gem 'carrierwave-base64'
-gem 'cloudinary'
+gem 'mini_magick', '~> 4.3'
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'

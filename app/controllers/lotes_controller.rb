@@ -1,5 +1,5 @@
 class LotesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [ :edit, :update, :destroy]
   before_action :set_lote, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -56,6 +56,6 @@ class LotesController < ApplicationController
     end
 
     def lote_params
-      params.require(:lote).permit(:name, :latitude_1, :latitude_2, :longitude_1, :longitude_2, :image_name, :image_type, :tile_url_x, :tile_url_y, :tile_url_z)
+      params.require(:lote).permit(:name, :latitude_1, :latitude_2, :longitude_1, :longitude_2, :image_name, :image_type, :tile_url_x, :tile_url_y, :tile_url_z, :imagem)
     end
 end

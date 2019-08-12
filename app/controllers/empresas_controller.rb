@@ -1,5 +1,5 @@
 class EmpresasController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [ :edit, :update, :destroy]
   before_action :set_empresa, only: [:show, :edit, :update, :destroy]
 
   def index

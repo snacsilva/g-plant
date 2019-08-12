@@ -60,6 +60,12 @@
     <%= form.text_field :tile_url_z,
     class: "form-control" %>
   </div>
+   <div class="field">
+    <%= form.label :imagem, 'Imagem Lote' %>
+    <%= form.file_field :imagem,
+    class: "form-control" %>
+  </div>
+  <p>
   <div class="actions">
     <button type="submit" name=”commit” class="btn btn-primary mb-2">Criar</button>
   </div>
