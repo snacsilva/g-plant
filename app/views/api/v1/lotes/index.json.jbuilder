@@ -1,1 +1,1 @@
-json.array! @lotes, partial: "lotes/lote", as: :lote
+json.array! @lotes, partial: "api/v1/lotes/lote", as: :lote

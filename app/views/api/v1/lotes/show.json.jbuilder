@@ -1,1 +1,1 @@
-json.partial! "lotes/lote", lote: @lote
+json.partial! "api/v1/lotes/lote", lote: @lote
