@@ -10,11 +10,6 @@
       <th scope="col">Latitude 2</th>
       <th scope="col">Longitude 1</th>
       <th scope="col">Longitude 2</th>
-      <th scope="col">Image name</th>
-      <th scope="col">Image type</th>
-      <th scope="col">Tile url x</th>
-      <th scope="col">Tile url y</th>
-      <th scope="col">Tile url z</th>
       <th scope="col" colspan="3"></th>
     </tr>
   </thead>
@@ -27,11 +22,6 @@
         <td><%= lote.latitude_2 %></td>
         <td><%= lote.longitude_1 %></td>
         <td><%= lote.longitude_2 %></td>
-        <td><%= lote.image_name %></td>
-        <td><%= lote.image_type %></td>
-        <td><%= lote.tile_url_x %></td>
-        <td><%= lote.tile_url_y %></td>
-        <td><%= lote.tile_url_z %></td>
         <td><%= link_to 'Mostrar', lote %></td>
         <td><%= link_to 'Editar', edit_lote_path(lote) %></td>
         <td><%= link_to 'Destruir', lote, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
