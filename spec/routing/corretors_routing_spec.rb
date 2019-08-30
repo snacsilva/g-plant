@@ -1,38 +1,38 @@
 require "rails_helper"
 
-RSpec.describe CorretorsController, type: :routing do
+RSpec.describe CorretoresController, type: :routing do
   describe "routing" do
     it "routes to #index" do
-      expect(:get => "/corretors").to route_to("corretors#index")
+      expect(:get => "/corretores").to route_to("corretores#index")
     end
 
     it "routes to #new" do
-      expect(:get => "/corretors/new").to route_to("corretors#new")
+      expect(:get => "/corretores/new").to route_to("corretores#new")
     end
 
     it "routes to #show" do
-      expect(:get => "/corretors/1").to route_to("corretors#show", :id => "1")
+      expect(:get => "/corretores/1").to route_to("corretores#show", :id => "1")
     end
 
     it "routes to #edit" do
-      expect(:get => "/corretors/1/edit").to route_to("corretors#edit", :id => "1")
+      expect(:get => "/corretores/1/edit").to route_to("corretores#edit", :id => "1")
     end
 
 
     it "routes to #create" do
-      expect(:post => "/corretors").to route_to("corretors#create")
+      expect(:post => "/corretores").to route_to("corretores#create")
     end
 
     it "routes to #update via PUT" do
-      expect(:put => "/corretors/1").to route_to("corretors#update", :id => "1")
+      expect(:put => "/corretores/1").to route_to("corretores#update", :id => "1")
     end
 
     it "routes to #update via PATCH" do
-      expect(:patch => "/corretors/1").to route_to("corretors#update", :id => "1")
+      expect(:patch => "/corretores/1").to route_to("corretores#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/corretors/1").to route_to("corretors#destroy", :id => "1")
+      expect(:delete => "/corretores/1").to route_to("corretores#destroy", :id => "1")
     end
   end
 end
