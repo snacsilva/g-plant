@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @terreno.name %>
+</p>
+
+<p>
+  <strong>Latitude 1:</strong>
+  <%= @terreno.latitude_1 %>
+</p>
+
+<p>
+  <strong>Latitude 2:</strong>
+  <%= @terreno.latitude_2 %>
+</p>
+
+<p>
+  <strong>Longitude 1:</strong>
+  <%= @terreno.longitude_1 %>
+</p>
+
+<p>
+  <strong>Longitude 2:</strong>
+  <%= @terreno.longitude_2 %>
+</p>
+
+<p>
+  <strong>Imagem: </strong>
+  <%= image_tag(@terreno.imagem.thumb.url) %>
+</p>
+
+<%= link_to 'Editar', edit_terreno_path(@terreno), class: "btn btn-primary mb-2" %> |
+<%= link_to 'Voltar', terrenos_path, class: "btn btn-primary mb-2" %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>terrenos</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Latitude 1</th>
+      <th scope="col">Latitude 2</th>
+      <th scope="col">Longitude 1</th>
+      <th scope="col">Longitude 2</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @terrenos.each do |terreno| %>
+      <tr>
+        <td ><%= terreno.name %></td>
+        <td><%= terreno.latitude_1 %></td>
+        <td><%= terreno.latitude_2 %></td>
+        <td><%= terreno.longitude_1 %></td>
+        <td><%= terreno.longitude_2 %></td>
+        <td><%= link_to 'Mostrar', terreno %></td>
+        <td><%= link_to 'Editar', edit_terreno_path(terreno) %></td>
+        <td><%= link_to 'Destruir', terreno, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo terreno', new_terreno_path, class: "btn btn-primary mb-2" %>
