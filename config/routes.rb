@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  root to: "lotes#index"
+  resources :loteamentos
+  root to: "terrenos#index"
   resources :corretores
   resources :empresas
   resources :clientes
-  resources :lotes
+  resources :terrenos
   devise_for :users
 
   namespace :api do
