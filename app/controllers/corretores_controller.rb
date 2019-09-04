@@ -56,6 +56,6 @@ class CorretoresController < ApplicationController
     end
 
     def corretor_params
-      params.require(:corretor).permit(:nome, :cpf, :crea, :telefone)
+      params.require(:corretor).permit(:nome, :cpf, :crea, :telefone, :email, :password, :password_confirmation)
     end
 end
