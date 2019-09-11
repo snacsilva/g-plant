@@ -16,8 +16,18 @@ class CorretoresController < ApplicationController
   def edit
   end
 
-  def create
-    @corretor = Corretor.new(corretor_params)
+  def create    
+    user = Corretor.create_user(corretor_params[:users])
+
+    p user
+
+    @corretor = Corretor.new
+    
+    @corretor.nome = corretor_params[:nome]
+    @corretor.cpf = corretor_params[:cpf]
+    @corretor.crea = corretor_params[:crea]
+    @corretor.telefone = corretor_params[:telefone]
+    @corretor.user_id = user.id
 
     respond_to do |format|
       if @corretor.save
@@ -56,7 +66,7 @@ class CorretoresController < ApplicationController
     end
 
     def corretor_params
-      params.require(:corretor).permit(:nome, :cpf, :crea, :telefone)
-      params.require(:users).permit!
+      params.require(:corretor).require(:users)
+      params.require(:corretor).permit(:nome, :cpf, :crea, :telefone, users: [ :email, :password])
     end
 end

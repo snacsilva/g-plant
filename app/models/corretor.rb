@@ -1,10 +1,18 @@
 class Corretor < ApplicationRecord
   belongs_to :user
-  before_create :create_user
+  # before_create :create_user
+    accepts_nested_attributes_for :user
+
+
+  def self.create_user users_params
+    user = User.find_by_email(users_params[:email])
+    if user
+      raise "Usuário já existe"
+    else
+      User.create(email: users_params[:email], password: users_params[:password], password_confirmation: users_params[:password])
+    end
+  end
 
   protected
 
-  def create_user
-    User.create(email: self.email, password: self.password, password_confirmation: self.password_confirmation)
-  end
 end
