@@ -9,6 +9,7 @@
       <th scope="row">Cpf</th>
       <th scope="row">Crea</th>
       <th scope="row">Telefone</th>
+      <th scope="row">Email</th>
       <th scope="row" colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= corretor.cpf %></td>
         <td><%= corretor.crea %></td>
         <td><%= corretor.telefone %></td>
+        <td><%= corretor.user.email || '' %></td>
         <td><%= link_to 'Mostrar', corretor %></td>
         <td><%= link_to 'Editar', edit_corretor_path(corretor) %></td>
         <td><%= link_to 'Destruir', corretor, method: :delete, data: { confirm: 'Are you sure?' } %></td>

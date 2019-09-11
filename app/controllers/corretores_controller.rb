@@ -1,5 +1,5 @@
 class CorretoresController < ApplicationController
-  before_action :authenticate_user!, only: [ :edit, :update, :destroy]
+  before_action :authenticate_user!
   before_action :set_corretor, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,9 +17,7 @@ class CorretoresController < ApplicationController
   end
 
   def create    
-    user = Corretor.create_user(corretor_params[:users])
-
-    p user
+    usuario = Corretor.find_and_create_user(corretor_params[:users])
 
     @corretor = Corretor.new
     
@@ -27,7 +25,7 @@ class CorretoresController < ApplicationController
     @corretor.cpf = corretor_params[:cpf]
     @corretor.crea = corretor_params[:crea]
     @corretor.telefone = corretor_params[:telefone]
-    @corretor.user_id = user.id
+    @corretor.user_id = usuario.id
 
     respond_to do |format|
       if @corretor.save

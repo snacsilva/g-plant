@@ -1,4 +1,6 @@
 class Api::V1::LoteamentosController < ApplicationController
+  respond_to :json
+  before_action :carrega_user
   before_action :set_loteamento, only: [:show]
 
   def index
@@ -24,5 +26,14 @@ class Api::V1::LoteamentosController < ApplicationController
   private
     def set_loteamento
       @loteamento = Loteamento.find(params[:id])
+    end
+
+    def carrega_user
+      if params[:auth_token].present?
+        @user_token = User.where(token: params[:auth_token]).try(:first)
+        raise 'Token inválido' unless @user_token
+      else
+        raise 'Token inválido'
+      end
     end
 end

@@ -1,4 +1,5 @@
 class LoteamentosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_loteamento, only: [:show, :edit, :update, :destroy]
 
   # GET /loteamentos
