@@ -17,7 +17,12 @@ class EmpresasController < ApplicationController
   end
 
   def create
+    usuario = Empresa.find_and_create_user(empresa_params[:users])
+
     @empresa = Empresa.new(empresa_params)
+    @empresa.nome = empresa_params[:nome] 
+    @empresa.cnpj = empresa_params[:cnpj]
+    @empresa.user_id = usuario.id
 
     respond_to do |format|
       if @empresa.save
@@ -56,6 +61,7 @@ class EmpresasController < ApplicationController
     end
 
     def empresa_params
-      params.require(:empresa).permit(:nome, :cnpj)
+      params.require(:empresa).require(:users)
+      params.require(:empresa).permit(:nome, :cnpj, users: [:email, :password])
     end
 end

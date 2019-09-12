@@ -17,13 +17,20 @@ class ClientesController < ApplicationController
   end
 
   def create
-    @cliente = Cliente.new(cliente_params)
+    usuario = Cliente.find_and_create_user(cliente_params[:users])
+
+    @cliente = Cliente.new
+    @cliente.nome = cliente_params[:nome]
+    @cliente.cpf = cliente_params[:cpf]
+    @cliente.telefone = cliente_params[:telefone]
+    @cliente.user_id = usuario.id
 
     respond_to do |format|
       if @cliente.save
         format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
         format.json { render :show, status: :created, location: @cliente }
       else
+        usuario.destroy
         format.html { render :new }
         format.json { render json: @cliente.errors, status: :unprocessable_entity }
       end
@@ -56,6 +63,7 @@ class ClientesController < ApplicationController
     end
 
     def cliente_params
-      params.require(:cliente).permit(:nome, :cpf, :telefone)
+      params.require(:cliente).require(:users)
+      params.require(:cliente).permit(:nome, :cpf, :telefone, users: [ :email, :password])
     end
 end

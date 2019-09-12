@@ -29,7 +29,22 @@
     class: "form-control" %>
   </div>
 
+  <%= form.fields_for :users do |user_form| %>
+    <div class="field">
+      <%= user_form.label :email %>
+      <%= user_form.text_field :email,
+      class: "form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= user_form.label :senha %>
+      <%= user_form.password_field :password,
+      class: "form-control"  %>
+    </div>
+  <% end %>
+
   <div class="actions">
+    <br>
     <button type="submit" name=”commit” class="btn btn-primary mb-2">Criar</button>
   </div>
 <% end %>

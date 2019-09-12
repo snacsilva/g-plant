@@ -32,6 +32,7 @@ class CorretoresController < ApplicationController
         format.html { redirect_to @corretor, notice: 'Corretor was successfully created.' }
         format.json { render :show, status: :created, location: @corretor }
       else
+        usuario.destroy
         format.html { render :new }
         format.json { render json: @corretor.errors, status: :unprocessable_entity }
       end
