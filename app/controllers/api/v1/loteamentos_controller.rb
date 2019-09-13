@@ -5,7 +5,6 @@ class Api::V1::LoteamentosController < ApplicationController
 
   def index
     @loteamentos = Loteamento.all
-
   end
 
   def show
