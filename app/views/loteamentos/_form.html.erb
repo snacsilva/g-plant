@@ -12,21 +12,30 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :name,
+    class: "form-control" %>
+  </div>
+
+  <div class="field">
     <%= form.label :longitude %>
-    <%= form.text_field :longitude %>
+    <%= form.text_field :longitude,
+    class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :latitude %>
-    <%= form.text_field :latitude %>
+    <%= form.text_field :latitude,
+    class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :terreno_id %>
-    <%= form.number_field :terreno_id %>
+    <%= form.label :terreno %>
+    <%= form.collection_select(:terreno_id, Terreno.all, :id, :name, {include_blank: false},{class: 'form-control '}) %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <br>
+    <button type="submit" name=”commit” class="btn btn-primary mb-2">Criar</button>
   </div>
 <% end %>

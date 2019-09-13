@@ -25,6 +25,7 @@ class LoteamentosController < ApplicationController
   # POST /loteamentos
   # POST /loteamentos.json
   def create
+    @terreno = Terreno.all
     @loteamento = Loteamento.new(loteamento_params)
 
     respond_to do |format|
@@ -70,6 +71,6 @@ class LoteamentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def loteamento_params
-      params.require(:loteamento).permit(:longitude, :latitude, :terreno_id)
+      params.require(:loteamento).permit(:longitude, :latitude, :terreno_id, :name)
     end
 end

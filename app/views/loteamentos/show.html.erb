@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Nome:</strong>
+  <%= @loteamento.name %>
+</p>
+
+<p>
   <strong>Longitude:</strong>
   <%= @loteamento.longitude %>
 </p>
@@ -12,8 +17,8 @@
 
 <p>
   <strong>Terreno:</strong>
-  <%= @loteamento.terreno_id %>
+  <%= @loteamento.terreno.name %>
 </p>
 
-<%= link_to 'Edit', edit_loteamento_path(@loteamento) %> |
-<%= link_to 'Back', loteamentos_path %>
+<%= link_to 'Editar', edit_loteamento_path(@loteamento), class: "btn btn-primary mb-2" %> |
+<%= link_to 'Voltar', loteamentos_path, class: "btn btn-primary mb-2" %>
