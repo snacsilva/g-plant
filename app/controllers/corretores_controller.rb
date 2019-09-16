@@ -21,7 +21,6 @@ class CorretoresController < ApplicationController
 
     @corretor = Corretor.new
     
-    @corretor.nome = corretor_params[:nome]
     @corretor.cpf = corretor_params[:cpf]
     @corretor.crea = corretor_params[:crea]
     @corretor.telefone = corretor_params[:telefone]
@@ -66,6 +65,6 @@ class CorretoresController < ApplicationController
 
     def corretor_params
       params.require(:corretor).require(:users)
-      params.require(:corretor).permit(:nome, :cpf, :crea, :telefone, users: [ :email, :password])
+      params.require(:corretor).permit(:cpf, :crea, :telefone, users: [ :name, :email, :password])
     end
 end

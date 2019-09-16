@@ -1,7 +1,6 @@
 class Cliente < ApplicationRecord
-    # has_many :lotes
-    belongs_to :user
-    validates_presence_of :nome, :cpf
+    belongs_to :user, dependent: :destroy
+    validates_presence_of  :cpf
 
 
   def self.find_and_create_user users_params
@@ -9,7 +8,7 @@ class Cliente < ApplicationRecord
     if user
       raise "Usuário já existe"
     else
-      User.create(email: users_params[:email], password: users_params[:password], password_confirmation: users_params[:password])
+      User.create(name: users_params[:name], email: users_params[:email], password: users_params[:password], password_confirmation: users_params[:password])
     end
   end
 end

@@ -20,7 +20,7 @@ class ClientesController < ApplicationController
     usuario = Cliente.find_and_create_user(cliente_params[:users])
 
     @cliente = Cliente.new
-    @cliente.nome = cliente_params[:nome]
+
     @cliente.cpf = cliente_params[:cpf]
     @cliente.telefone = cliente_params[:telefone]
     @cliente.user_id = usuario.id
@@ -64,6 +64,6 @@ class ClientesController < ApplicationController
 
     def cliente_params
       params.require(:cliente).require(:users)
-      params.require(:cliente).permit(:nome, :cpf, :telefone, users: [ :email, :password])
+      params.require(:cliente).permit( :cpf, :telefone, users: [ :name, :email, :password])
     end
 end

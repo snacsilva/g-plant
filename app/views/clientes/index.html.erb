@@ -15,7 +15,7 @@
   <tbody>
     <% @clientes.each do |cliente| %>
       <tr>
-        <td><%= cliente.nome %></td>
+        <td><%= cliente.user.name %></td>
         <td><%= cliente.cpf %></td>
         <td><%= cliente.telefone %></td>
         <td><%= link_to 'Mostrar', cliente %></td>

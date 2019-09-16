@@ -20,7 +20,7 @@ class EmpresasController < ApplicationController
     usuario = Empresa.find_and_create_user(empresa_params[:users])
 
     @empresa = Empresa.new
-    # @empresa.nome = empresa_params[:nome] 
+    
     @empresa.cnpj = empresa_params[:cnpj]
     @empresa.user_id = usuario.id
 

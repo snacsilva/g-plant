@@ -2,7 +2,7 @@
 
 <p>
   <strong>Nome:</strong>
-  <%= @cliente.nome %>
+  <%= @cliente.user.name %>
 </p>
 
 <p>
@@ -15,5 +15,5 @@
   <%= @cliente.telefone %>
 </p>
 
-<%= link_to 'Edit', edit_cliente_path(@cliente), class: "btn btn-primary mb-2" %> |
-<%= link_to 'Back', clientes_path, class: "btn btn-primary mb-2" %>
+<%= link_to 'Editar', edit_cliente_path(@cliente), class: "btn btn-primary mb-2" %> |
+<%= link_to 'Voltar', clientes_path, class: "btn btn-primary mb-2" %>

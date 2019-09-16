@@ -1,5 +1,5 @@
 class Empresa < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
 
 
   def self.find_and_create_user users_params

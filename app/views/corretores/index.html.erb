@@ -16,7 +16,7 @@
   <tbody>
     <% @corretores.each do |corretor| %>
       <tr>
-        <td><%= corretor.nome %></td>
+        <td><%= corretor.user.name %></td>
         <td><%= corretor.cpf %></td>
         <td><%= corretor.crea %></td>
         <td><%= corretor.telefone %></td>

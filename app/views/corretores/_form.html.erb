@@ -11,11 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome,
-    class: "form-control"  %>
-  </div>
+  <%= form.fields_for :users do |user_form| %>
+    <div class="field">
+      <%= form.label :nome %>
+      <%= form.text_field :nome,
+      class: "form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= user_form.label :email %>
+      <%= user_form.text_field :email,
+      class: "form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= user_form.label :senha %>
+      <%= user_form.password_field :password,
+      class: "form-control"  %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= form.label :cpf %>
@@ -35,20 +49,6 @@
     class: "form-control"  %>
   </div>
   
-  <%= form.fields_for :users do |user_form| %>
-
-    <div class="field">
-      <%= user_form.label :email %>
-      <%= user_form.text_field :email,
-      class: "form-control"  %>
-    </div>
-
-    <div class="field">
-      <%= user_form.label :senha %>
-      <%= user_form.password_field :password,
-      class: "form-control"  %>
-    </div>
-  <% end %>
 
   <div class="actions">
   <br>
