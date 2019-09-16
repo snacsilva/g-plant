@@ -7,6 +7,7 @@
     <tr>
       <th scope="col">Nome</th>
       <th scope="col">Cnpj</th>
+      <th scope="col">Email</th>
       <th scope="col" colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +15,9 @@
   <tbody>
     <% @empresas.each do |empresa| %>
       <tr>
-        <td><%= empresa.nome %></td>
+        <td><%= empresa.user.name %></td>
         <td><%= empresa.cnpj %></td>
+        <td><%= empresa.user.email %></td>
         <td><%= link_to 'Mostrar', empresa %></td>
         <td><%= link_to 'Editar', edit_empresa_path(empresa) %></td>
         <td><%= link_to 'Destruir', empresa, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>

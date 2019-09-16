@@ -7,7 +7,7 @@ class Empresa < ApplicationRecord
     if user
       raise "Usuário já existe"
     else
-      User.create(email: users_params[:email], password: users_params[:password], password_confirmation: users_params[:password])
+      User.create(name: users_params[:name], email: users_params[:email], password: users_params[:password], password_confirmation: users_params[:password])
     end
   end
 end
